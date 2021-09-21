@@ -156,3 +156,45 @@ fun main(){
 
     }
 }
+class Car{
+    var color = ""
+    init {
+        val colors = listOf("Red", "Blue", "Green", "Yellow")
+        color = colors[Random.nextInt(colors.size)]  // --> colors.size is 4 in this case
+    }
+}
+//Map
+val numbersMap = mapOf("one" to 1, "two" to 2, "three" to 3)
+println(numbersMap.get("one"))
+println(numbersMap["one"])
+println(numbersMap.getOrDefault("four", 10))
+println(numbersMap["five"])               // null
+//numbersMap.getValue("six")      // exception!
+
+val numbersMap = mapOf("one" to 1, "two" to 2, "three" to 3)
+println(numbersMap.keys)
+println(numbersMap.values)
+
+//Filter on map
+
+val numbersMap = mapOf("key1" to 1, "key2" to 2, "key3" to 3, "key11" to 11)
+val filteredMap = numbersMap.filter { (key, value) -> key.endsWith("1") && value > 10}
+println(filteredMap)
+
+val numbersMap = mapOf("key1" to 1, "key2" to 2, "key3" to 3, "key11" to 11)
+val filteredKeysMap = numbersMap.filterKeys { it.endsWith("1") }
+val filteredValuesMap = numbersMap.filterValues { it < 10 }
+
+println(filteredKeysMap)
+println(filteredValuesMap)
+
+val numbersMap = mutableMapOf("one" to 1, "two" to 2)
+val previousValue = numbersMap.put("one", 11)
+println("value associated with 'one', before: $previousValue, after: ${numbersMap["one"]}")
+println(numbersMap)
+
+//OOP
+val myCar = Car()
+println(myCar.color)  // --> This will print the random color assigned to our car
+myCar.color = "Silver"
+println(myCar.color)  // --> Silver
