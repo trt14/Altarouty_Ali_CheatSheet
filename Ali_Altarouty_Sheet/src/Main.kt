@@ -156,13 +156,8 @@ fun main(){
 
     }
 }
-class Car{
-    var color = ""
-    init {
-        val colors = listOf("Red", "Blue", "Green", "Yellow")
-        color = colors[Random.nextInt(colors.size)]  // --> colors.size is 4 in this case
-    }
-}
+//OOP
+
 //Map
 val numbersMap = mapOf("one" to 1, "two" to 2, "three" to 3)
 println(numbersMap.get("one"))
@@ -193,7 +188,13 @@ val previousValue = numbersMap.put("one", 11)
 println("value associated with 'one', before: $previousValue, after: ${numbersMap["one"]}")
 println(numbersMap)
 
-//OOP
+class Car{
+    var color = ""
+    init {
+        val colors = listOf("Red", "Blue", "Green", "Yellow")
+        color = colors[Random.nextInt(colors.size)]  // --> colors.size is 4 in this case
+    }
+}
 val myCar = Car()
 println(myCar.color)  // --> This will print the random color assigned to our car
 myCar.color = "Silver"
