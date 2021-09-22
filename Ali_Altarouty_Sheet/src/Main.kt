@@ -188,6 +188,8 @@ val previousValue = numbersMap.put("one", 11)
 println("value associated with 'one', before: $previousValue, after: ${numbersMap["one"]}")
 println(numbersMap)
 
+
+//OOP
 class Car{
     var color = ""
     init {
@@ -199,3 +201,25 @@ val myCar = Car()
 println(myCar.color)  // --> This will print the random color assigned to our car
 myCar.color = "Silver"
 println(myCar.color)  // --> Silver
+
+//Another OOP Ex
+abstract class Vehicle{
+    var color = "Blue"
+    abstract fun doors()
+}
+class FamilyCar: Vehicle(){
+    override fun doors() {
+        println("This car has 4 doors")
+    }
+}
+class SportsCar: Vehicle(){
+    override fun doors() {
+        println("This car has 2 doors")
+    }
+}
+FamilyCar().doors()  // --> This car has 4 doors
+println("The family car is ${FamilyCar().color}.")  // --> The family car is Blue.
+val mySportsCar = SportsCar()
+mySportsCar.doors()  // --> This car has 2 doors
+mySportsCar.color = "Red"
+println("The color of my sports car is ${mySportsCar.color}.")  // --> The color of my sports car is Red.
